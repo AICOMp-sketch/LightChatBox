@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chat Box</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="chat-container bg-white rounded-2xl w-full max-w-md h-[500px] flex flex-col">
+        <!-- Chat Header -->
+        <div class="bg-indigo-600 text-white p-4 rounded-t-2xl flex items-center">
+            <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center overflow-hidden">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/00a9dfd2-5d99-4aaa-8e82-71d22783fc84.png" alt="User avatar - friendly customer support representative with headset" class="w-full h-full object-cover">
+            </div>
+            <div class="ml-3">
+                <p class="font-bold">Support Agent</p>
+                <p class="text-xs opacity-75">Online</p>
+            </div>
+        </div>
+        
+        <!-- Messages Container -->
+        <div class="flex-1 p-4 overflow-y-auto" id="messages-container">
+            <!-- Sample incoming message -->
+            <div class="message mb-4 flex">
+                <div class="w-8 h-8 rounded-full overflow-hidden mr-2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5ffb41ef-648c-4f79-80c1-a7348a88e49b.png" alt="Chat bot avatar - friendly digital assistant with smile" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <div class="bg-gray-200 rounded-t-2xl rounded-br-2xl px-4 py-2 max-w-xs">
+                        <p class="text-sm">Hello! How can I help you today?</p>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">10:30 AM</p>
+                </div>
+            </div>
+            
+            <!-- Sample outgoing message -->
+            <div class="message mb-4 flex justify-end">
+                <div>
+                    <div class="bg-indigo-600 text-white rounded-t-2xl rounded-bl-2xl px-4 py-2 max-w-xs">
+                        <p class="text-sm">I need help with my account</p>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1 text-right">10:32 AM</p>
+                </div>
+                <div class="w-8 h-8 rounded-full overflow-hidden ml-2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aced657d-1e2b-43d1-b27e-ff3f22fa80ab.png" alt="My profile photo - smiling person wearing casual clothes" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Typing indicator (hidden by default) -->
+            <div class="typing-indicator mb-4 flex opacity-0 transition-opacity duration-300" id="typing-indicator">
+                <div class="w-8 h-8 rounded-full overflow-hidden mr-2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bc3fbb06-25e0-439c-82a2-31ee775a6520.png" alt="Chat bot avatar - friendly digital assistant with smile" class="w-full h-full object-cover">
+                </div>
+                <div class="bg-gray-200 rounded-t-2xl rounded-br-2xl px-4 py-2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Message Input -->
+        <div class="border-t p-4">
+            <div class="flex">
+                <input type="text" 
+                       id="message-input" 
+                       placeholder="Type your message..." 
+                       class="flex-1 border rounded-l-2xl py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <button id="send-button" class="bg-indigo-600 text-white rounded-r-2xl px-4 py-2 hover:bg-indigo-700 transition">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
